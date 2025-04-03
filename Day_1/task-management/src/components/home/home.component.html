@@ -1,0 +1,109 @@
+<div class="home-main-container">
+  <div class="inner-header">
+    <div class="filter-opt" (click)="filterClicked()">
+      <img
+        class="filter-icon"
+        src="../../assets/images/filter-icon.png"
+        alt="filter"
+      />
+      <div class="filter-text">Filter By Priority</div>
+    </div>
+  </div>
+  <div class="filter-popup" *ngIf="isFilterClicked">
+    <div class="high-prio" (click)="highPrioClicked()">High</div>
+    <div class="medium-prio" (click)="mediumPrioClicked()">Medium</div>
+    <div class="low-prio" (click)="lowPrioClicked()">Low</div>
+  </div>
+  <div class="home-container">
+    <div class="side-bar">
+      <div
+        class="side-bar-item"
+        (click)="showAll()"
+        [ngClass]="{ active: isShowAll }"
+      >
+        Show All
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showCompleted()"
+        [ngClass]="{ active: isShowCompleted }"
+      >
+        Completed
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showInProgress()"
+        [ngClass]="{ active: isShowInProgress }"
+      >
+        In Progress
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showPending()"
+        [ngClass]="{ active: isShowPending }"
+      >
+        Pending
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="task-container">
+        <div *ngFor="let task of filteredTasks">
+          <app-task-item
+            [task]="task"
+            (taskUpdated)="updateTask(task)"
+            (taskDeleted)="deleteTask(task)"
+          ></app-task-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="update-main" *ngIf="isUpdate">
+  <form>
+    <div class="task-title">
+      <label>Task Name : </label>
+      <input [value]="currentTask?.title" [(ngModel)]="title" name="title" />
+    </div>
+    <div class="task-desc">
+      <label>Description : </label>
+      <textarea
+        [value]="currentTask?.description"
+        [(ngModel)]="desc"
+        name="desc"
+      ></textarea>
+    </div>
+    <div class="task-status">
+      <label>Status : </label>
+      <input [value]="currentTask?.status" [(ngModel)]="status" name="status" />
+    </div>
+    <div class="task-priority">
+      <label>Priority : </label>
+      <input
+        [value]="currentTask?.priority"
+        [(ngModel)]="priority"
+        name="priority"
+      />
+    </div>
+    <div class="task-assignedTo">
+      <label>Assigned To : </label>
+      <input
+        [value]="currentTask?.assignedTo"
+        [(ngModel)]="assignTo"
+        name="assignName"
+      />
+    </div>
+    <div class="task-dueDate">
+      <label> Due Date : </label>
+      <input
+        [value]="currentTask?.dueDate"
+        [(ngModel)]="dueDate"
+        name="duedate"
+      />
+    </div>
+    <div class="update-btn-main">
+      <button class="updateBtn" (click)="updateSubmit()">Update</button>
+      <button class="cancelBtn" (click)="closeUpdate()">Cancel</button>
+    </div>
+  </form>
+</div>
