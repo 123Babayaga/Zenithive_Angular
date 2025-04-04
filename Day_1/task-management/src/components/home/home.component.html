@@ -6,13 +6,16 @@
         src="../../assets/images/filter-icon.png"
         alt="filter"
       />
-      <div class="filter-text">Filter By Priority</div>
+      <div class="filter-text">Filter</div>
     </div>
   </div>
   <div class="filter-popup" *ngIf="isFilterClicked">
-    <div class="high-prio" (click)="highPrioClicked()">High</div>
-    <div class="medium-prio" (click)="mediumPrioClicked()">Medium</div>
-    <div class="low-prio" (click)="lowPrioClicked()">Low</div>
+    <div class="side-bar-item-1" (click)="sortHighToLow()">
+      Priority: High to Low
+    </div>
+    <div class="side-bar-item-2" (click)="sortLowToHigh()">
+      Priority: Low to High
+    </div>
   </div>
   <div class="home-container">
     <div class="side-bar">

@@ -39,18 +39,18 @@
   .filter-popup {
     position: absolute;
     top: 54px;
-    right: 51px;
+    right: 20px;
     z-index: 1;
     border: 1px solid darkblue;
     border-radius: 8px;
-    width: 10%;
+    width: 15%;
 
-    .high-prio {
+    .side-bar-item-1 {
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
     }
 
-    .low-prio {
+    .side-bar-item-2 {
       border-bottom-left-radius: 8px;
       border-bottom-right-radius: 8px;
     }
@@ -194,6 +194,7 @@
         font-weight: 600;
         color: darkblue;
         background-color: white;
+        cursor: pointer;
       }
     }
   }

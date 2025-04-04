@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component } from '@angular/core';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -85,6 +85,12 @@ export class HomeComponent {
     },
   ];
 
+  priorityOrder: any = {
+    High: 3,
+    Medium: 2,
+    Low: 1,
+  };
+
   title: any;
   desc: any;
   status: any;
@@ -166,16 +172,6 @@ export class HomeComponent {
   }
 
   showPending() {
-    if (this.isHighSelected) {
-      this.filteredTasks = this.tasks.filter(
-        (task) => task.status === 'Pending' && task.priority === 'High'
-      );
-    } else if (this.isLowSelected) {
-      this.filteredTasks = this.tasks.filter(
-        (task) => task.status === 'Pending' && task.priority === 'Low'
-      );
-    }
-
     this.filteredTasks = this.tasks.filter((task) => task.status === 'Pending');
     this.isShowAll = false;
     this.isShowCompleted = false;
@@ -196,76 +192,17 @@ export class HomeComponent {
     this.isFilterClicked = !this.isFilterClicked;
   }
 
-  highPrioClicked() {
-    if (this.isShowCompleted) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'High' && item.status === 'Completed'
-      );
-    } else if (this.isShowInProgress) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'High' && item.status === 'In Progress'
-      );
-    } else if (this.isShowPending) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'High' && item.status === 'Pending'
-      );
-    } else {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'High'
-      );
-    }
+  sortHighToLow() {
+    this.filteredTasks = [...this.filteredTasks].sort((a, b) => {
+      return this.priorityOrder[b.priority] - this.priorityOrder[a.priority];
+    });
     this.isFilterClicked = false;
-    this.isHighSelected = true;
-    this.isLowSelected = false;
-    this.isMediumSelected = false;
   }
 
-  mediumPrioClicked() {
-    if (this.isShowCompleted) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Medium' && item.status === 'Completed'
-      );
-    } else if (this.isShowInProgress) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) =>
-          item.priority === 'Medium' && item.status === 'In Progress'
-      );
-    } else if (this.isShowPending) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Medium' && item.status === 'Pending'
-      );
-    } else {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Medium'
-      );
-    }
+  sortLowToHigh() {
+    this.filteredTasks = [...this.filteredTasks].sort((a, b) => {
+      return this.priorityOrder[a.priority] - this.priorityOrder[b.priority];
+    });
     this.isFilterClicked = false;
-    this.isHighSelected = false;
-    this.isLowSelected = false;
-    this.isMediumSelected = true;
-  }
-
-  lowPrioClicked() {
-    if (this.isShowCompleted) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Low' && item.status === 'Completed'
-      );
-    } else if (this.isShowInProgress) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Low' && item.status === 'In Progress'
-      );
-    } else if (this.isShowPending) {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Low' && item.status === 'Pending'
-      );
-    } else {
-      this.filteredTasks = this.tasks.filter(
-        (item: any) => item.priority === 'Low'
-      );
-    }
-    this.isFilterClicked = false;
-    this.isHighSelected = false;
-    this.isLowSelected = true;
-    this.isMediumSelected = false;
   }
 }
