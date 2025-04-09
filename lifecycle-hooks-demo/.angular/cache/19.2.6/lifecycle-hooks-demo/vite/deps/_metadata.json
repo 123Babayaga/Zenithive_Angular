@@ -1,49 +1,58 @@
 {
-  "hash": "1dfd1f57",
-  "configHash": "4bff2190",
-  "lockfileHash": "e90bd078",
-  "browserHash": "f969a9ba",
+  "hash": "90b8d7e9",
+  "configHash": "f7540671",
+  "lockfileHash": "af12abb1",
+  "browserHash": "da289fbb",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "bd7203e9",
+      "fileHash": "eec267f1",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "f83273fa",
+      "fileHash": "dfcc2744",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "31fd878f",
+      "fileHash": "915556b8",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "b42a2933",
+      "fileHash": "0b20f154",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "56a8ddb8",
+      "fileHash": "881363ce",
+      "needsInterop": false
+    },
+    "rxjs": {
+      "src": "../../../../../../node_modules/rxjs/dist/esm5/index.js",
+      "file": "rxjs.js",
+      "fileHash": "372a0062",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-ZIAGJ6LN": {
-      "file": "chunk-ZIAGJ6LN.js"
+    "chunk-ERUYBTT2": {
+      "file": "chunk-ERUYBTT2.js"
     },
-    "chunk-Y4V3QD2Y": {
-      "file": "chunk-Y4V3QD2Y.js"
+    "chunk-4EREAO4C": {
+      "file": "chunk-4EREAO4C.js"
     },
-    "chunk-BMMIBYAN": {
-      "file": "chunk-BMMIBYAN.js"
+    "chunk-YCA54VN2": {
+      "file": "chunk-YCA54VN2.js"
+    },
+    "chunk-S35MAB2V": {
+      "file": "chunk-S35MAB2V.js"
     }
   }
 }
