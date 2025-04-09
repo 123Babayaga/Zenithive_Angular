@@ -1,0 +1,187 @@
+/* src/app/components/task-item/task-item.component.css */
+.task-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  background-color: #fff;
+  transition: box-shadow 0.3s;
+}
+
+.task-item:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.task-item.editing {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.task-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.task-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.task-status, .task-priority {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Status colors */
+.status-pending {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.status-in-progress {
+  background-color: #cff4fc;
+  color: #0c5460;
+}
+
+.status-completed {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+/* Priority colors */
+.priority-low {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.priority-medium {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.priority-high {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.task-description {
+  margin: 10px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.status-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.task-control-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.status-btn {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.edit-btn {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.edit-btn:hover {
+  background-color: #0069d9;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Edit form styles */
+.task-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input, .form-group textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cancel-btn {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+}

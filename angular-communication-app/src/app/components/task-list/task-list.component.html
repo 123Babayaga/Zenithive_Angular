@@ -1,0 +1,85 @@
+<div class="task-management-container">
+  <h2>Task Management</h2>
+  
+  <!-- Add New Task Form -->
+  <div class="add-task-form">
+    <h3>Add New Task</h3>
+    <div class="form-group">
+      <label for="newTaskTitle">Title:</label>
+      <input 
+        type="text" 
+        id="newTaskTitle" 
+        [(ngModel)]="newTask.title" 
+        placeholder="Enter task title"
+        required>
+    </div>
+    
+    <div class="form-group">
+      <label for="newTaskDesc">Description:</label>
+      <textarea 
+        id="newTaskDesc" 
+        [(ngModel)]="newTask.description" 
+        placeholder="Enter task description" 
+        rows="2"></textarea>
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label>Priority:</label>
+        <select [(ngModel)]="newTask.priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Status:</label>
+        <select [(ngModel)]="newTask.status">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+    </div>
+    
+    <button class="add-task-btn" (click)="addTask()">Add Task</button>
+  </div>
+  
+  <div class="controls">
+    <div class="filter-controls">
+      <h3>Filter by Status:</h3>
+      <div class="button-group">
+        <button [class.active]="taskService.activeFilter() === 'all'" (click)="filterTasks('all')">All</button>
+        <button [class.active]="taskService.activeFilter() === 'pending'" (click)="filterTasks('pending')">Pending</button>
+        <button [class.active]="taskService.activeFilter() === 'in-progress'" (click)="filterTasks('in-progress')">In Progress</button>
+        <button [class.active]="taskService.activeFilter() === 'completed'" (click)="filterTasks('completed')">Completed</button>
+      </div>
+    </div>
+    
+    <div class="sort-controls">
+      <h3>Sort by:</h3>
+      <div class="button-group">
+        <button [class.active]="taskService.activeSorting() === 'none'" (click)="sortTasks('none')">None</button>
+        <button [class.active]="taskService.activeSorting() === 'priority'" (click)="sortTasks('priority')">Priority</button>
+        <button [class.active]="taskService.activeSorting() === 'title'" (click)="sortTasks('title')">Title</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tasks-container">
+    <h3>Tasks ({{taskService.filteredTasks().length}})</h3>
+    
+    <div *ngIf="taskService.filteredTasks().length === 0" class="empty-state">
+      No tasks match the current filter criteria.
+    </div>
+    
+    <div class="task-list">
+      <app-task-item 
+        *ngFor="let task of taskService.filteredTasks()" 
+        [task]="task"
+        (deleteTask)="deleteTask($event)">
+      </app-task-item>
+    </div>
+  </div>
+</div>
