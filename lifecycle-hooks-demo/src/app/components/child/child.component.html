@@ -1,0 +1,25 @@
+<div class="child-container">
+    <h3>Child Component</h3>
+    <p>Input Value: {{ inputData }}</p>
+    
+    <div class="content-projection">
+      <ng-content></ng-content>
+    </div>
+    
+    <div class="items-list">
+      <h4>Items ({{ items.length }})</h4>
+      <ul>
+        <li *ngFor="let item of items" 
+            (click)="selectItem(item)" 
+            [class.selected]="selectedItem?.id === item.id">
+          ID: {{ item.id }} - Value: {{ item.value }}
+        </li>
+      </ul>
+    </div>
+    
+    <div #childViewElement class="child-view">
+      <p>This element is accessed via ViewChild</p>
+    </div>
+    
+    <app-grandchild [parentData]="inputData"></app-grandchild>
+  </div>

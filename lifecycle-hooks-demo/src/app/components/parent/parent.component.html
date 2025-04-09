@@ -1,0 +1,56 @@
+<div class="parent-container">
+    <h2>Lifecycle Hooks Demo</h2>
+    
+    <div class="controls">
+      <button (click)="startDataUpdates()">Start Updates</button>
+      <button (click)="stopDataUpdates()">Stop Updates</button>
+      <button (click)="addItem()">Add Item</button>
+      <button (click)="toggleChildVisibility()">{{ showChild ? 'Hide' : 'Show' }} Child</button>
+      <button (click)="changeChildInput()">Update Child Input</button>
+    </div>
+    
+    <div class="configuration">
+      <label>
+        Update Interval (ms):
+        <input type="number" [(ngModel)]="updateInterval" min="1000" step="1000">
+      </label>
+    </div>
+    
+    <div #parentContent class="content-container">
+      <p>Parent component content. ViewChild element reference is available in ngAfterViewInit.</p>
+      
+      <div class="data-display">
+        <h3>Current Data:</h3>
+        <ul>
+          <li *ngFor="let item of items">
+            ID: {{ item.id }} - Value: {{ item.value }}
+            <button (click)="removeItem(item.id)">Remove</button>
+          </li>
+        </ul>
+      </div>
+      
+      <app-child 
+        *ngIf="showChild"
+        [inputData]="childInput"
+        [items]="items"
+        (itemSelected)="onItemSelected($event)">
+        <div class="projected-content">
+          <h4>This is projected content from parent</h4>
+          <p>This content demonstrates ngAfterContentInit and ngAfterContentChecked hooks</p>
+        </div>
+      </app-child>
+    </div>
+    
+    <div class="event-log">
+      <h3>Component Lifecycle Events:</h3>
+      <div class="log-entries">
+        <div *ngFor="let entry of eventLog" class="log-entry">
+          <span class="timestamp">{{ entry.timestamp }}</span>
+          <span class="component" [ngClass]="entry.component">{{ entry.component }}</span>
+          <span class="event">{{ entry.event }}</span>
+          <span class="details" *ngIf="entry.details">{{ entry.details }}</span>
+        </div>
+      </div>
+      <button (click)="clearLog()">Clear Log</button>
+    </div>
+  </div>
