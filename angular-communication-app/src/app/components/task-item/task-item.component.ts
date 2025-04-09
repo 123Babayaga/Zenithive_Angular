@@ -1,4 +1,3 @@
-// src/app/components/task-item/task-item.component.ts
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
