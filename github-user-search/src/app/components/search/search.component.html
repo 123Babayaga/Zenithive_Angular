@@ -1,0 +1,49 @@
+<div class="search-container">
+    <h1>GitHub User Search</h1>
+    
+    <mat-form-field class="search-field" appearance="outline">
+      <mat-label>Search GitHub Users</mat-label>
+      <input matInput [formControl]="searchControl" placeholder="Type a username...">
+      <mat-icon matSuffix>search</mat-icon>
+      <mat-hint>Type at least 3 characters</mat-hint>
+    </mat-form-field>
+  
+    
+    <div *ngIf="loading" class="loading-container">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Searching users...</p>
+    </div>
+  
+
+    <div *ngIf="error" class="error-container">
+      <mat-icon color="warn">error</mat-icon>
+      <p>{{ error }}</p>
+    </div>
+  
+    <div class="content-container">
+    
+      <div *ngIf="users.length > 0" class="results-container">
+        <h2>Results ({{ users.length }} users found)</h2>
+        
+        <mat-card *ngFor="let user of users" class="user-card" (click)="selectUser(user)">
+          <mat-card-header>
+            <img mat-card-avatar [src]="user.avatar_url" [alt]="user.login">
+            <mat-card-title>{{ user.login }}</mat-card-title>
+            <mat-card-subtitle>
+              <a [href]="user.html_url" target="_blank" (click)="$event.stopPropagation()">View GitHub Profile</a>
+            </mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+  
+        <p *ngIf="users.length === 0 && !loading && !error" class="no-results">
+          No users found matching your search
+        </p>
+      </div>
+  
+    
+      <app-user-details 
+        *ngIf="selectedUser" 
+        [username]="selectedUser">
+      </app-user-details>
+    </div>
+  </div>

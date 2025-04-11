@@ -1,0 +1,55 @@
+<div class="user-details-container">
+    <h2>User Details</h2>
+    
+
+    <div *ngIf="loading" class="loading-container">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Loading user details...</p>
+    </div>
+    
+    <div *ngIf="error" class="error-container">
+      <mat-icon color="warn">error</mat-icon>
+      <p>{{ error }}</p>
+    </div>
+    
+
+    <mat-card *ngIf="user" class="details-card">
+      <mat-card-header>
+        <img mat-card-avatar [src]="user.avatar_url" [alt]="user.login">
+        <mat-card-title>{{ user.name || user.login }}</mat-card-title>
+        <mat-card-subtitle>{{ user.login }}</mat-card-subtitle>
+      </mat-card-header>
+      
+      <img *ngIf="user.avatar_url" mat-card-image [src]="user.avatar_url" [alt]="user.login" class="user-avatar">
+      
+      <mat-card-content>
+        <p *ngIf="user.bio">{{ user.bio }}</p>
+        
+        <mat-divider></mat-divider>
+        
+        <div class="stats-container">
+          <div class="stat-item">
+            <mat-icon>book</mat-icon>
+            <span>{{ user.public_repos }} repositories</span>
+          </div>
+          
+          <div class="stat-item">
+            <mat-icon>people</mat-icon>
+            <span>{{ user.followers }} followers</span>
+          </div>
+          
+          <div class="stat-item">
+            <mat-icon>person_add</mat-icon>
+            <span>Following {{ user.following }}</span>
+          </div>
+        </div>
+      </mat-card-content>
+      
+      <mat-card-actions>
+        <a mat-button color="primary" [href]="user.html_url" target="_blank">
+          <mat-icon>open_in_new</mat-icon>
+          VIEW GITHUB PROFILE
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
