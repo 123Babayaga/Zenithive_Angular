@@ -13,7 +13,6 @@ import { Task } from '../../models/task.model';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent {
-  // Form model for new task
   newTask: Omit<Task, 'id'> = {
     title: '',
     description: '',
@@ -23,7 +22,6 @@ export class TaskListComponent {
 
   constructor(public taskService: TaskService) {}
 
-  // Filter and sort methods now call service
   filterTasks(filter: string): void {
     this.taskService.setFilter(filter);
   }
@@ -32,12 +30,12 @@ export class TaskListComponent {
     this.taskService.setSorting(criteria);
   }
 
-  // Add new task
+
   addTask(): void {
     if (this.newTask.title.trim()) {
       this.taskService.addTask({...this.newTask});
       
-      // Reset form
+    
       this.newTask = {
         title: '',
         description: '',
@@ -47,7 +45,7 @@ export class TaskListComponent {
     }
   }
 
-  // Delete task
+
   deleteTask(id: number): void {
     this.taskService.deleteTask(id);
   }

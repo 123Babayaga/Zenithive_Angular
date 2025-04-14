@@ -1,0 +1,34 @@
+<div class="min-h-screen bg-gray-100 decoration-sky-100">
+  <nav class="bg-white dark:bg-gray-900 shadow">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div
+          class="text-4xl font-semibold text-gray-700 dark:text-white"
+        >
+          Babayaga NGRX STORE
+        </div>
+        <div class="gap-4 flex">
+          <button
+          *ngIf="router.url === '/cart'"
+          type="button"
+          routerLink="/products"
+          class="rounded-md border border-purple-500 px-3 py-2 text-sm font-semibold text-purple-500 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+        >
+          Back to shop
+        </button>
+        
+
+          <button
+            routerLink="/cart"
+            class="text-gray-600 dark:text-gray-300 hover:underline"
+          >
+            Cart <span>{{ cartStore.products().length }}</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet />
+</div>
