@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { GitHubUser, GitHubSearchResponse } from '../models/github-user';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
