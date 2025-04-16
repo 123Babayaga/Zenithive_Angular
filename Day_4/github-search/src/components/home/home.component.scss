@@ -1,0 +1,120 @@
+.home-main {
+  background-color: #061c3f;
+  height: 70vh;
+  width: 50%;
+  margin: 7% 0 10% 25%;
+  position: fixed;
+  overflow-y: scroll;
+  border-radius: 20px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.search-input {
+  background-color: #041024;
+  border: 2px solid #113a74;
+  width: 83%;
+  outline: none;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-main {
+  width: 50%;
+  margin: auto;
+}
+
+.search-text {
+  font-size: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 10% 0;
+  color: white;
+}
+
+.loader-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10% 0;
+}
+
+.loader {
+  width: 35px;
+  aspect-ratio: 1;
+  --_g: no-repeat radial-gradient(farthest-side, #579ce0 94%, #579ce000);
+  background: var(--_g) 0 0, var(--_g) 100% 0, var(--_g) 100% 100%,
+    var(--_g) 0 100%;
+  background-size: 40% 40%;
+  animation: l38 0.8s infinite;
+}
+@keyframes l38 {
+  100% {
+    background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+  }
+}
+
+.user-details-main {
+  background-color: #041024;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  margin: 10% auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.user-avtar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+}
+
+.user-details {
+  div {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10% 0;
+  }
+}
+
+.user-not-found {
+  color: red;
+  font-size: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.view-profile {
+  a {
+    color: #579ce0;
+    // padding: 8px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+.no-input {
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+}

@@ -1,0 +1,49 @@
+.couter {
+  font-size: 5.5rem;
+  font-weight: 600;
+  margin: 40px 0;
+}
+
+.stop-btn {
+  padding: 8px 32px;
+  background-color: rgb(255, 36, 73);
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.start-btn {
+  padding: 8px 32px;
+  background-color: green;
+  border: none;
+  border-radius: 8px;
+  margin: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.time-out {
+  background: url("../../assets/images/time-out.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  right: 25%;
+  top: 0;
+}
+
+.timer-main {
+  display: flex;
+  gap: 100px;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  height: 200px;
+}
