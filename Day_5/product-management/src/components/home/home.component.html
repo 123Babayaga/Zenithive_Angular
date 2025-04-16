@@ -6,6 +6,7 @@
   <div *ngIf="error$ | async; else products">
     Sorry.. Something went wrong.. {{ error$ }}
   </div>
+
   <ng-template #products>
     <div class="product-cards-main">
       <ng-container *ngIf="products$ | async as products">
