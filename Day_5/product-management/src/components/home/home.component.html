@@ -4,7 +4,7 @@
 
 <ng-template #productList>
   <div *ngIf="error$ | async; else products">
-    Sorry.. Something went wrong.. {{ error$ }}
+    Sorry.. Something went wrong... {{ error$ }}
   </div>
 
   <ng-template #products>
