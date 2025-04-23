@@ -1,0 +1,90 @@
+<div class="container">
+  <h1>Baba Users Component Library Demo</h1>
+  
+  <section>
+    <h2>Button Variants</h2>
+    <div class="button-showcase">
+      <baba-button variant="primary">Primary Button</baba-button>
+      <baba-button variant="secondary">Secondary Button</baba-button>
+      <baba-button variant="danger">Danger Button</baba-button>
+      <baba-button variant="success">Success Button</baba-button>
+      <baba-button variant="outline">Outline Button</baba-button>
+      <baba-button variant="primary" [disabled]="true">Disabled Button</baba-button>
+    </div>
+    
+    <h3>Button Sizes</h3>
+    <div class="button-showcase">
+      <baba-button variant="primary" size="sm">Small Button</baba-button>
+      <baba-button variant="primary" size="md">Medium Button</baba-button>
+      <baba-button variant="primary" size="lg">Large Button</baba-button>
+    </div>
+  </section>
+  
+  <section>
+    <h2>Card Component with Slots</h2>
+    <baba-card>
+      <div card-header>
+        <h3>Card Title</h3>
+      </div>
+      <div card-body>
+        <p>This is the main content of the card. The card component uses content projection 
+        with named slots to allow flexible content placement.</p>
+      </div>
+      <div card-footer>
+        <baba-button variant="primary" size="sm">Action</baba-button>
+      </div>
+    </baba-card>
+    
+    <div class="spacer"></div>
+    
+    <baba-card>
+      <div card-body>
+        <p>This card only has body content without header or footer.</p>
+      </div>
+    </baba-card>
+  </section>
+  
+  <section>
+    <h2>Form Input with Validation</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <baba-card>
+        <div card-header>
+          <h3>Registration Form</h3>
+        </div>
+        <div card-body>
+          <baba-input 
+            label="Name" 
+            formControlName="name"
+            [required]="true"
+            [minLength]="3"
+            helperText="Enter your full name"
+          ></baba-input>
+          
+          <baba-input 
+            label="Email" 
+            type="email"
+            formControlName="email"
+            [required]="true"
+            [email]="true"
+            helperText="We'll never share your email"
+          ></baba-input>
+          
+          <baba-input 
+            label="Password" 
+            type="password"
+            formControlName="password"
+            [required]="true"
+            [minLength]="8"
+            helperText="Must be at least 8 characters"
+          ></baba-input>
+          <div card-footer>
+            <baba-button variant="primary" type="submit" [disabled]="form.invalid">
+              Register
+            </baba-button>
+          </div>
+        </div>
+        
+      </baba-card>
+    </form>
+  </section>
+</div>
