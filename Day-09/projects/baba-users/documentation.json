@@ -1,0 +1,1099 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "FormWrapperComponent",
+            "id": "component-FormWrapperComponent-f6760ccc3bb1e665bdf6dd771eff048b2d956b4ac5a6950bb2c6100098c9c9801ade4b16dcac1550441b32c96c70f626f1eba32afa0aa67a007e7ede62ae32ac",
+            "file": "projects/baba-users/src/stories/input.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "form-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<form [formGroup]=\"form\">\n  <baba-input\n    [label]=\"label\"\n    [placeholder]=\"placeholder\"\n    [type]=\"type\"\n    [id]=\"id\"\n    [helperText]=\"helperText\"\n    [required]=\"required\"\n    [email]=\"email\"\n    [minLength]=\"minLength\"\n    [maxLength]=\"maxLength\"\n    [pattern]=\"pattern\"\n    formControlName=\"inputField\"\n  ></baba-input>\n</form>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "email",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                },
+                {
+                    "name": "form",
+                    "defaultValue": "new FormGroup({\r\n    inputField: new FormControl('')\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "helperText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                },
+                {
+                    "name": "id",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 40
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "maxLength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "minLength",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 44
+                },
+                {
+                    "name": "pattern",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 39
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "ReactiveFormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';\r\nimport { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';\r\nimport { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { InputComponent } from '../lib/components/form/input/input.component';\r\n\r\n// Create a wrapper component for form control integration\r\n@Component({\r\n  selector: 'form-wrapper',\r\n  standalone: true,\r\n  imports: [ReactiveFormsModule, CommonModule, InputComponent],\r\n  template: `\r\n    <form [formGroup]=\"form\">\r\n      <baba-input\r\n        [label]=\"label\"\r\n        [placeholder]=\"placeholder\"\r\n        [type]=\"type\"\r\n        [id]=\"id\"\r\n        [helperText]=\"helperText\"\r\n        [required]=\"required\"\r\n        [email]=\"email\"\r\n        [minLength]=\"minLength\"\r\n        [maxLength]=\"maxLength\"\r\n        [pattern]=\"pattern\"\r\n        formControlName=\"inputField\"\r\n      ></baba-input>\r\n    </form>\r\n  `\r\n})\r\nclass FormWrapperComponent {\r\n  form = new FormGroup({\r\n    inputField: new FormControl('')\r\n  });\r\n  \r\n  // Props that match InputComponent's inputs\r\n  label = '';\r\n  placeholder = '';\r\n  type = 'text';\r\n  id = '';\r\n  helperText = '';\r\n  required = false;\r\n  email = false;\r\n  minLength?: number;\r\n  maxLength?: number;\r\n  pattern?: string;\r\n}\r\n\r\n\r\nconst meta: Meta<FormWrapperComponent> = {\r\n  title: 'Components/Input',\r\n  component: FormWrapperComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, CommonModule, InputComponent]\r\n    })\r\n  ],\r\n  argTypes: {\r\n    label: { control: 'text' },\r\n    placeholder: { control: 'text' },\r\n    type: { \r\n      control: 'select', \r\n      options: ['text', 'email', 'password', 'number', 'tel', 'url']\r\n    },\r\n    id: { control: 'text' },\r\n    helperText: { control: 'text' },\r\n    required: { control: 'boolean' },\r\n    email: { control: 'boolean' },\r\n    minLength: { control: 'number' },\r\n    maxLength: { control: 'number' },\r\n    pattern: { control: 'text' }\r\n  },\r\n  args: {\r\n    label: 'Input Label',\r\n    placeholder: 'Enter value',\r\n    type: 'text',\r\n    id: 'demo-input',\r\n    helperText: 'Helper text provides additional guidance',\r\n    required: false,\r\n    email: false,\r\n  }\r\n};\r\n\r\nexport default meta;\r\ntype Story = StoryObj<FormWrapperComponent>;\r\n\r\n\r\nexport const Text: Story = {\r\n  args: {\r\n    label: 'Username',\r\n    placeholder: 'Enter your username',\r\n    helperText: 'Choose a unique username',\r\n  }\r\n};\r\n\r\n\r\nexport const Required: Story = {\r\n  args: {\r\n    label: 'Required Field',\r\n    placeholder: 'This field cannot be empty',\r\n    required: true,\r\n    helperText: 'This field is mandatory'\r\n  }\r\n};\r\n\r\n\r\nexport const Email: Story = {\r\n  args: {\r\n    label: 'Email Address',\r\n    type: 'email',\r\n    placeholder: 'example@domain.com',\r\n    email: true,\r\n    required: true,\r\n    helperText: 'We\\'ll never share your email'\r\n  }\r\n};\r\n\r\n\r\nexport const Password: Story = {\r\n  args: {\r\n    label: 'Password',\r\n    type: 'password',\r\n    placeholder: 'Enter your password',\r\n    required: true,\r\n    minLength: 8,\r\n    helperText: 'Password must be at least 8 characters'\r\n  }\r\n};\r\n\r\n\r\nexport const WithLengthConstraints: Story = {\r\n  args: {\r\n    label: 'Bio',\r\n    placeholder: 'Tell us about yourself',\r\n    minLength: 10,\r\n    maxLength: 100,\r\n    helperText: 'Between 10 and 100 characters'\r\n  }\r\n};\r\n\r\n\r\nexport const WithPattern: Story = {\r\n  args: {\r\n    label: 'Phone Number',\r\n    type: 'tel',\r\n    placeholder: '123-456-7890',\r\n    pattern: '^[0-9]{3}-[0-9]{3}-[0-9]{4}$',\r\n    helperText: 'Format: 123-456-7890'\r\n  }\r\n};\r\n\r\n\r\nexport const FormExample: Story = {\r\n  render: () => ({\r\n    template: `\r\n      <div style=\"max-width: 400px; padding: 20px; border: 1px solid #eee; border-radius: 8px;\">\r\n        <h3 style=\"margin-top: 0; margin-bottom: 20px;\">Registration Form</h3>\r\n        <form [formGroup]=\"registerForm\">\r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Full Name\"\r\n              placeholder=\"Enter your full name\"\r\n              required=\"true\"\r\n              formControlName=\"name\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Email Address\"\r\n              placeholder=\"your.email@example.com\"\r\n              type=\"email\"\r\n              required=\"true\"\r\n              email=\"true\"\r\n              formControlName=\"email\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Password\"\r\n              type=\"password\"\r\n              placeholder=\"Choose a secure password\"\r\n              required=\"true\"\r\n              minLength=\"8\"\r\n              formControlName=\"password\"\r\n              helperText=\"At least 8 characters\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <button \r\n            style=\"background-color: #3b82f6; color: white; border: none; padding: 8px 16px; \r\n                  border-radius: 4px; cursor: pointer; font-weight: 500;\"\r\n            [disabled]=\"registerForm.invalid\"\r\n          >\r\n            Register\r\n          </button>\r\n        </form>\r\n      </div>\r\n    `,\r\n    props: {\r\n      registerForm: new FormGroup({\r\n        name: new FormControl(''),\r\n        email: new FormControl(''),\r\n        password: new FormControl('')\r\n      })\r\n    }\r\n  })\r\n};",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-body>\r\n          <h3>Basic Card</h3>\r\n          <p>This is a simple card with only body content.</p>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "CompleteCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Card Title</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card has a header, body, and footer.</p>\r\n          <p>You can put any content inside each section.</p>\r\n        </div>\r\n        <div card-footer>\r\n          <small>Footer information</small>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "CustomStyled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card style=\"max-width: 300px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);\">\r\n        <div card-header style=\"background-color: #f0f9ff; border-bottom: 2px solid #bae6fd;\">\r\n          <h3 style=\"color: #0369a1\">Custom Styled Card</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card uses inline styles to customize its appearance.</p>\r\n          <p>In a real application, you might use CSS classes instead.</p>\r\n        </div>\r\n        <div card-footer style=\"background-color: #f8fafc;\">\r\n          <baba-button variant=\"primary\">Action</baba-button>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "Danger",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'danger'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Danger Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    disabled: true\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Disabled Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Email",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Email Address',\r\n    type: 'email',\r\n    placeholder: 'example@domain.com',\r\n    email: true,\r\n    required: true,\r\n    helperText: 'We\\'ll never share your email'\r\n  }\r\n}"
+            },
+            {
+                "name": "FormExample",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div style=\"max-width: 400px; padding: 20px; border: 1px solid #eee; border-radius: 8px;\">\r\n        <h3 style=\"margin-top: 0; margin-bottom: 20px;\">Registration Form</h3>\r\n        <form [formGroup]=\"registerForm\">\r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Full Name\"\r\n              placeholder=\"Enter your full name\"\r\n              required=\"true\"\r\n              formControlName=\"name\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Email Address\"\r\n              placeholder=\"your.email@example.com\"\r\n              type=\"email\"\r\n              required=\"true\"\r\n              email=\"true\"\r\n              formControlName=\"email\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Password\"\r\n              type=\"password\"\r\n              placeholder=\"Choose a secure password\"\r\n              required=\"true\"\r\n              minLength=\"8\"\r\n              formControlName=\"password\"\r\n              helperText=\"At least 8 characters\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <button \r\n            style=\"background-color: #3b82f6; color: white; border: none; padding: 8px 16px; \r\n                  border-radius: 4px; cursor: pointer; font-weight: 500;\"\r\n            [disabled]=\"registerForm.invalid\"\r\n          >\r\n            Register\r\n          </button>\r\n        </form>\r\n      </div>\r\n    `,\r\n    props: {\r\n      registerForm: new FormGroup({\r\n        name: new FormControl(''),\r\n        email: new FormControl(''),\r\n        password: new FormControl('')\r\n      })\r\n    }\r\n  })\r\n}"
+            },
+            {
+                "name": "InteractiveCard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Interactive Card</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card includes interactive elements like buttons.</p>\r\n          <p>Cards are versatile components that can contain various content.</p>\r\n        </div>\r\n        <div card-footer>\r\n          <baba-button variant=\"primary\" size=\"sm\">Save</baba-button>\r\n          <baba-button variant=\"outline\" size=\"sm\" style=\"margin-left: 8px\">Cancel</baba-button>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'lg'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Large Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ButtonComponent>",
+                "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  // Define the controls for your component's inputs\n  argTypes: {\n    variant: { \n      control: 'select', \n      options: ['primary', 'secondary', 'danger', 'success', 'outline'] \n    },\n    size: { \n      control: 'radio', \n      options: ['sm', 'md', 'lg'] \n    },\n    disabled: { \n      control: 'boolean' \n    }\n  },\n  // Define default values for the component\n  args: {\n    variant: 'primary',\n    size: 'md',\n    disabled: false\n  }\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CardComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Card',\r\n  component: CardComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ButtonComponent],\r\n    }),\r\n  ],\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<FormWrapperComponent>",
+                "defaultValue": "{\r\n  title: 'Components/Input',\r\n  component: FormWrapperComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, CommonModule, InputComponent]\r\n    })\r\n  ],\r\n  argTypes: {\r\n    label: { control: 'text' },\r\n    placeholder: { control: 'text' },\r\n    type: { \r\n      control: 'select', \r\n      options: ['text', 'email', 'password', 'number', 'tel', 'url']\r\n    },\r\n    id: { control: 'text' },\r\n    helperText: { control: 'text' },\r\n    required: { control: 'boolean' },\r\n    email: { control: 'boolean' },\r\n    minLength: { control: 'number' },\r\n    maxLength: { control: 'number' },\r\n    pattern: { control: 'text' }\r\n  },\r\n  args: {\r\n    label: 'Input Label',\r\n    placeholder: 'Enter value',\r\n    type: 'text',\r\n    id: 'demo-input',\r\n    helperText: 'Helper text provides additional guidance',\r\n    required: false,\r\n    email: false,\r\n  }\r\n}"
+            },
+            {
+                "name": "Outline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'outline'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Outline Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Password",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Password',\r\n    type: 'password',\r\n    placeholder: 'Enter your password',\r\n    required: true,\r\n    minLength: 8,\r\n    helperText: 'Password must be at least 8 characters'\r\n  }\r\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n       color: /(background|color)$/i,\n       date: /Date$/i,\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'primary'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Primary Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Required",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Required Field',\r\n    placeholder: 'This field cannot be empty',\r\n    required: true,\r\n    helperText: 'This field is mandatory'\r\n  }\r\n}"
+            },
+            {
+                "name": "RichContent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Product Information</h3>\r\n        </div>\r\n        <div card-body>\r\n          <img src=\"https://via.placeholder.com/300x200\" alt=\"Product image\" style=\"width: 100%; height: auto\">\r\n          <h4 style=\"margin-top: 16px\">Product Name</h4>\r\n          <p>Detailed product description goes here. This showcases how cards can display rich content.</p>\r\n          <ul>\r\n            <li>Feature one</li>\r\n            <li>Feature two</li>\r\n            <li>Feature three</li>\r\n          </ul>\r\n          <p><strong>Price:</strong> $99.99</p>\r\n        </div>\r\n        <div card-footer>\r\n          <baba-button variant=\"success\">Add to Cart</baba-button>\r\n          <baba-button variant=\"outline\" style=\"margin-left: 8px\">More Info</baba-button>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'secondary'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Secondary Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'sm'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Small Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Success",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'success'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Success Button</baba-button>`\n  })\n}"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Username',\r\n    placeholder: 'Enter your username',\r\n    helperText: 'Choose a unique username',\r\n  }\r\n}"
+            },
+            {
+                "name": "WithFooter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-body>\r\n          <h3>Card With Footer Only</h3>\r\n          <p>This card has a body and footer, but no header.</p>\r\n        </div>\r\n        <div card-footer>\r\n          <small>Footer content here</small>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "WithHeader",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Card With Header</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card has a header and body, but no footer.</p>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+            },
+            {
+                "name": "WithLengthConstraints",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Bio',\r\n    placeholder: 'Tell us about yourself',\r\n    minLength: 10,\r\n    maxLength: 100,\r\n    helperText: 'Between 10 and 100 characters'\r\n  }\r\n}"
+            },
+            {
+                "name": "WithPattern",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Phone Number',\r\n    type: 'tel',\r\n    placeholder: '123-456-7890',\r\n    pattern: '^[0-9]{3}-[0-9]{3}-[0-9]{4}$',\r\n    helperText: 'Format: 123-456-7890'\r\n  }\r\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/baba-users/src/stories/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CardComponent>",
+                "file": "projects/baba-users/src/stories/card.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<FormWrapperComponent>",
+                "file": "projects/baba-users/src/stories/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/baba-users/src/stories/card.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-body>\r\n          <h3>Basic Card</h3>\r\n          <p>This is a simple card with only body content.</p>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "CompleteCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Card Title</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card has a header, body, and footer.</p>\r\n          <p>You can put any content inside each section.</p>\r\n        </div>\r\n        <div card-footer>\r\n          <small>Footer information</small>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "CustomStyled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card style=\"max-width: 300px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);\">\r\n        <div card-header style=\"background-color: #f0f9ff; border-bottom: 2px solid #bae6fd;\">\r\n          <h3 style=\"color: #0369a1\">Custom Styled Card</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card uses inline styles to customize its appearance.</p>\r\n          <p>In a real application, you might use CSS classes instead.</p>\r\n        </div>\r\n        <div card-footer style=\"background-color: #f8fafc;\">\r\n          <baba-button variant=\"primary\">Action</baba-button>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "InteractiveCard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Interactive Card</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card includes interactive elements like buttons.</p>\r\n          <p>Cards are versatile components that can contain various content.</p>\r\n        </div>\r\n        <div card-footer>\r\n          <baba-button variant=\"primary\" size=\"sm\">Save</baba-button>\r\n          <baba-button variant=\"outline\" size=\"sm\" style=\"margin-left: 8px\">Cancel</baba-button>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Card',\r\n  component: CardComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ButtonComponent],\r\n    }),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "RichContent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Product Information</h3>\r\n        </div>\r\n        <div card-body>\r\n          <img src=\"https://via.placeholder.com/300x200\" alt=\"Product image\" style=\"width: 100%; height: auto\">\r\n          <h4 style=\"margin-top: 16px\">Product Name</h4>\r\n          <p>Detailed product description goes here. This showcases how cards can display rich content.</p>\r\n          <ul>\r\n            <li>Feature one</li>\r\n            <li>Feature two</li>\r\n            <li>Feature three</li>\r\n          </ul>\r\n          <p><strong>Price:</strong> $99.99</p>\r\n        </div>\r\n        <div card-footer>\r\n          <baba-button variant=\"success\">Add to Cart</baba-button>\r\n          <baba-button variant=\"outline\" style=\"margin-left: 8px\">More Info</baba-button>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "WithFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-body>\r\n          <h3>Card With Footer Only</h3>\r\n          <p>This card has a body and footer, but no header.</p>\r\n        </div>\r\n        <div card-footer>\r\n          <small>Footer content here</small>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                },
+                {
+                    "name": "WithHeader",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <baba-card>\r\n        <div card-header>\r\n          <h3>Card With Header</h3>\r\n        </div>\r\n        <div card-body>\r\n          <p>This card has a header and body, but no footer.</p>\r\n        </div>\r\n      </baba-card>\r\n    `\r\n  })\r\n}"
+                }
+            ],
+            "projects/baba-users/src/stories/button.stories.ts": [
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'danger'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Danger Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    disabled: true\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Disabled Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'lg'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Large Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonComponent>",
+                    "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  // Define the controls for your component's inputs\n  argTypes: {\n    variant: { \n      control: 'select', \n      options: ['primary', 'secondary', 'danger', 'success', 'outline'] \n    },\n    size: { \n      control: 'radio', \n      options: ['sm', 'md', 'lg'] \n    },\n    disabled: { \n      control: 'boolean' \n    }\n  },\n  // Define default values for the component\n  args: {\n    variant: 'primary',\n    size: 'md',\n    disabled: false\n  }\n}"
+                },
+                {
+                    "name": "Outline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'outline'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Outline Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'primary'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Primary Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'secondary'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Secondary Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'sm'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Small Button</baba-button>`\n  })\n}"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'success'\n  },\n  render: (args) => ({\n    props: args,\n    template: `<baba-button [variant]=\"variant\" [size]=\"size\" [disabled]=\"disabled\">Success Button</baba-button>`\n  })\n}"
+                }
+            ],
+            "projects/baba-users/src/stories/input.stories.ts": [
+                {
+                    "name": "Email",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Email Address',\r\n    type: 'email',\r\n    placeholder: 'example@domain.com',\r\n    email: true,\r\n    required: true,\r\n    helperText: 'We\\'ll never share your email'\r\n  }\r\n}"
+                },
+                {
+                    "name": "FormExample",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  render: () => ({\r\n    template: `\r\n      <div style=\"max-width: 400px; padding: 20px; border: 1px solid #eee; border-radius: 8px;\">\r\n        <h3 style=\"margin-top: 0; margin-bottom: 20px;\">Registration Form</h3>\r\n        <form [formGroup]=\"registerForm\">\r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Full Name\"\r\n              placeholder=\"Enter your full name\"\r\n              required=\"true\"\r\n              formControlName=\"name\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Email Address\"\r\n              placeholder=\"your.email@example.com\"\r\n              type=\"email\"\r\n              required=\"true\"\r\n              email=\"true\"\r\n              formControlName=\"email\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <div style=\"margin-bottom: 16px;\">\r\n            <baba-input\r\n              label=\"Password\"\r\n              type=\"password\"\r\n              placeholder=\"Choose a secure password\"\r\n              required=\"true\"\r\n              minLength=\"8\"\r\n              formControlName=\"password\"\r\n              helperText=\"At least 8 characters\"\r\n            ></baba-input>\r\n          </div>\r\n          \r\n          <button \r\n            style=\"background-color: #3b82f6; color: white; border: none; padding: 8px 16px; \r\n                  border-radius: 4px; cursor: pointer; font-weight: 500;\"\r\n            [disabled]=\"registerForm.invalid\"\r\n          >\r\n            Register\r\n          </button>\r\n        </form>\r\n      </div>\r\n    `,\r\n    props: {\r\n      registerForm: new FormGroup({\r\n        name: new FormControl(''),\r\n        email: new FormControl(''),\r\n        password: new FormControl('')\r\n      })\r\n    }\r\n  })\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<FormWrapperComponent>",
+                    "defaultValue": "{\r\n  title: 'Components/Input',\r\n  component: FormWrapperComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [ReactiveFormsModule, CommonModule, InputComponent]\r\n    })\r\n  ],\r\n  argTypes: {\r\n    label: { control: 'text' },\r\n    placeholder: { control: 'text' },\r\n    type: { \r\n      control: 'select', \r\n      options: ['text', 'email', 'password', 'number', 'tel', 'url']\r\n    },\r\n    id: { control: 'text' },\r\n    helperText: { control: 'text' },\r\n    required: { control: 'boolean' },\r\n    email: { control: 'boolean' },\r\n    minLength: { control: 'number' },\r\n    maxLength: { control: 'number' },\r\n    pattern: { control: 'text' }\r\n  },\r\n  args: {\r\n    label: 'Input Label',\r\n    placeholder: 'Enter value',\r\n    type: 'text',\r\n    id: 'demo-input',\r\n    helperText: 'Helper text provides additional guidance',\r\n    required: false,\r\n    email: false,\r\n  }\r\n}"
+                },
+                {
+                    "name": "Password",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Password',\r\n    type: 'password',\r\n    placeholder: 'Enter your password',\r\n    required: true,\r\n    minLength: 8,\r\n    helperText: 'Password must be at least 8 characters'\r\n  }\r\n}"
+                },
+                {
+                    "name": "Required",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Required Field',\r\n    placeholder: 'This field cannot be empty',\r\n    required: true,\r\n    helperText: 'This field is mandatory'\r\n  }\r\n}"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Username',\r\n    placeholder: 'Enter your username',\r\n    helperText: 'Choose a unique username',\r\n  }\r\n}"
+                },
+                {
+                    "name": "WithLengthConstraints",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Bio',\r\n    placeholder: 'Tell us about yourself',\r\n    minLength: 10,\r\n    maxLength: 100,\r\n    helperText: 'Between 10 and 100 characters'\r\n  }\r\n}"
+                },
+                {
+                    "name": "WithPattern",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Phone Number',\r\n    type: 'tel',\r\n    placeholder: '123-456-7890',\r\n    pattern: '^[0-9]{3}-[0-9]{3}-[0-9]{4}$',\r\n    helperText: 'Format: 123-456-7890'\r\n  }\r\n}"
+                }
+            ],
+            "projects/baba-users/.storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/baba-users/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n       color: /(background|color)$/i,\n       date: /Date$/i,\n      },\n    },\n  },\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/baba-users/src/stories/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonComponent>",
+                    "file": "projects/baba-users/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/baba-users/src/stories/card.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CardComponent>",
+                    "file": "projects/baba-users/src/stories/card.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/baba-users/src/stories/input.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<FormWrapperComponent>",
+                    "file": "projects/baba-users/src/stories/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/baba-users/.storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Danger",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Disabled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Outline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CompleteCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomStyled",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "InteractiveCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RichContent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithFooter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithHeader",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/card.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormWrapperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Email",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FormExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Password",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Required",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithLengthConstraints",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithPattern",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/baba-users/src/stories/input.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
