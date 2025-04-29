@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Virtual Scrolling for Long Lists</h2>
+    
+    <cdk-virtual-scroll-viewport itemSize="70" class="virtual-scroll-viewport">
+      <div *cdkVirtualFor="let item of mediaItems" class="media-item">
+        <img [src]="item.thumbnailUrl" [alt]="item.title" loading="lazy">
+        <div class="media-info">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>

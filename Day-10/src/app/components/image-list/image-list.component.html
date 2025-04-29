@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Lazy Loaded Images</h2>
+    <div class="image-grid">
+      <div class="image-card" *ngFor="let item of mediaItems">
+        <a [routerLink]="['/images', item.id]">
+          <img 
+            [attr.loading]="'lazy'" 
+            [src]="item.thumbnailUrl" 
+            [alt]="item.title"
+          >
+          <h3>{{ item.title }}</h3>
+        </a>
+      </div>
+    </div>
+  </div>

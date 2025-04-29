@@ -1,0 +1,10 @@
+<div class="container" *ngIf="mediaItem">
+    <h2>{{ mediaItem.title }}</h2>
+    <div class="image-container">
+      <img [src]="mediaItem.imageUrl" [alt]="mediaItem.title">
+    </div>
+    <div class="description">
+      <p>{{ mediaItem.description }}</p>
+    </div>
+    <button routerLink="/images">Back to Images</button>
+  </div>
