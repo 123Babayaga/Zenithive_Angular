@@ -1,4 +1,4 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -11,6 +11,7 @@ import { cartReducer } from './states/cart/cart.reducer';
 import { ProductReducer } from './states/product/product.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { ProductEffect } from './states/product/product.effect';
+import { provideServiceWorker } from '@angular/service-worker';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,5 +24,9 @@ export const appConfig: ApplicationConfig = {
     provideState({ name: 'cart', reducer: cartReducer }),
     provideState({ name: 'product', reducer: ProductReducer }),
     provideEffects(ProductEffect),
-  ],
+    provideServiceWorker('ngsw-worker.js', {
+        enabled: !isDevMode(),
+        registrationStrategy: 'registerWhenStable:30000'
+    })
+],
 };
