@@ -1,0 +1,18 @@
+{
+  "Filter": "Filter",
+  "Priority: High to Low": "Priority: High to Low",
+  "Priority: Low to High": "Priority: Low to High",
+  "Show All": "Show All",
+  "Completed": "Completed",
+  "In Progress": "In Progress",
+  "Pending": "Pending",
+  "Task Name": "Task Name",
+  "Description": "Description",
+  "Status": "Status",
+  "Priority": "Priority",
+  "Assigned To": "Assigned To",
+  "Due Date": "Due Date",
+  "Update": "Update",
+  "Cancel": "Cancel",
+  "Delete": "Delete"
+}

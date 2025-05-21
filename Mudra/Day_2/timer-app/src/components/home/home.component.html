@@ -1,0 +1,18 @@
+<div class="home-main">
+  <div class="input-div">
+    <input [(ngModel)]="inptCounter" type="number" name="counter" />
+    <button (click)="setTimerClicked()">Set Timer</button>
+  </div>
+  <div>
+    <app-timer [InitialTime]="initialTime" [triggerId]="triggerId">
+      <div *ngIf="isSetTimerClicked" class="timer-title">Timer Started:</div>
+    </app-timer>
+  </div>
+</div>
+
+<div *ngIf="isWelcome" class="welcome-main">
+  <div>
+    <p>Welcome To Our Timer Application!!</p>
+    <button (click)="closeWelcome()">Close</button>
+  </div>
+</div>

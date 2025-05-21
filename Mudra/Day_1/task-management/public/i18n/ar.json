@@ -1,0 +1,18 @@
+{
+  "Filter": "تصفية",
+  "Priority: High to Low": "الأولوية: من عالية إلى منخفضة",
+  "Priority: Low to High": "الأولوية: من منخفضة إلى عالية",
+  "Show All": "عرض الكل",
+  "Completed": "مكتمل",
+  "In Progress": "قيد التنفيذ",
+  "Pending": "قيد الانتظار",
+  "Task Name": "اسم المهمة",
+  "Description": "الوصف",
+  "Status": "الحالة",
+  "Priority": "الأولوية",
+  "Assigned To": "مُعيّنة إلى",
+  "Due Date": "تاريخ الاستحقاق",
+  "Update": "تحديث",
+  "Cancel": "إلغاء",
+  "Delete": "حذف"
+}

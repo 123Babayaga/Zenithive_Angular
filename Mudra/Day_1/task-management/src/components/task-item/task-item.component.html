@@ -1,0 +1,39 @@
+<div class="task-item-main">
+  <div class="status-priority">
+    <p
+      [ngClass]="{
+        high: task?.priority === 'High',
+        medium: task?.priority === 'Medium',
+        low: task?.priority === 'Low'
+      }"
+    >
+      {{ task?.priority }}
+    </p>
+    <span>&#183;</span>
+    <p>
+      {{ task?.status }}
+    </p>
+    <span>&#183;</span>
+    <p>
+      {{ task?.dueDate | dynamicDatePipe }}
+    </p>
+  </div>
+  <div class="task-detail">
+    <div class="task-title">{{ task?.title }}</div>
+    <div class="task-desc">
+      <span>&#183;</span>
+      <p>{{ task?.description }}</p>
+    </div>
+  </div>
+  <div class="assign-to">
+    {{ "Assigned To" | translate }}: {{ task?.assignedTo }}
+  </div>
+  <div class="task-btns">
+    <button class="update-btn" (click)="updateTask(task)">
+      {{ "Update" | translate }}
+    </button>
+    <button class="delete-btn" (click)="deleteTaskClicked(task)">
+      {{ "Delete" | translate }}
+    </button>
+  </div>
+</div>

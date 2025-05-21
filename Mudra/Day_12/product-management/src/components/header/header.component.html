@@ -1,0 +1,44 @@
+<div class="header-main" *ngIf="isHome">
+  <div class="filter" (click)="filterClicked()">
+    <img
+      src="../../assets/images/filter-32.png"
+      class="filter-icon"
+      alt="filter icon"
+    />Filter
+  </div>
+  <div *ngIf="isFilterClicked" class="filter-main">
+    <div class="filter-title">
+      Category
+      <div class="close" (click)="closeFilter()">&#10005;</div>
+    </div>
+    <div
+      class="filter-item"
+      [ngClass]="{ active: selectedFilter.includes(`women's clothing`) }"
+    >
+      <span *ngIf="selectedFilter.includes(`women's clothing`)"> &#10003;</span>
+      Women's Clothing
+    </div>
+    <div
+      class="filter-item"
+      [ngClass]="{active : selectedFilter.includes(`men's clothing`)}"
+    >
+      <span *ngIf="selectedFilter.includes(`men's clothing`)"> &#10003;</span>
+      Men's Clothing
+    </div>
+    <div
+      class="filter-item"
+      [ngClass]="{ active: selectedFilter.includes('electronics') }"
+    >
+      <span *ngIf="selectedFilter.includes('electronics')"> &#10003;</span>
+      Electronics
+    </div>
+    <div
+      class="filter-item"
+      [ngClass]="{ active: selectedFilter.includes('jewelery') }"
+    >
+      <span *ngIf="selectedFilter.includes('jewelery')"> &#10003;</span>
+      Jewellery
+    </div>
+    <div class="clear-filter">Clear Filter</div>
+  </div>
+</div>

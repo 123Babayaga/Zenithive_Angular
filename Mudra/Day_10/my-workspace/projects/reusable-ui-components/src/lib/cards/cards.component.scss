@@ -1,0 +1,49 @@
+:host {
+  display: block;
+  width: 20%;
+  margin: 10px 20px;
+}
+
+.card-main {
+  border: 1px solid transparent;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  font-size: 1.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* text-align: start; */
+}
+
+.card-content-main {
+  padding: 10px;
+}
+
+.card-main:hover {
+  border: 1px solid gray;
+}
+
+.header-image {
+  height: 200px;
+  width: 100%;
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+}
+
+.no-image {
+  background-color: gray;
+}
+
+.footer {
+  text-align: end;
+  padding: 10px;
+}

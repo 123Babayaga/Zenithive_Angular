@@ -1,0 +1,7 @@
+<button
+  [type]="type"
+  (click)="emitClick()"
+  [ngClass]="['btn', 'btn-' + btnType, buttonClass]"
+>
+  <ng-content></ng-content>
+</button>

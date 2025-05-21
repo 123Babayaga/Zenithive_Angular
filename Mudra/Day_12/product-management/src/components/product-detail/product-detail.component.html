@@ -1,0 +1,38 @@
+<div class="product-details-main">
+  <div *ngIf="error$ | async; else showDetails">
+    Oops..Something went wrong..
+  </div>
+  <ng-template #showDetails>
+    <div class="loader-main" *ngIf="loading$ | async; else productDetail">
+      <div class="loader"></div>
+    </div>
+    <ng-template #productDetail>
+      <div class="back-arrow" routerLink="/"><span>&#8592;</span>Back</div>
+      <div class="product-detail-inner" *ngIf="product$ | async as product">
+        <div>
+          <div class="category">{{ product.category }}</div>
+          <img class="product-img" [src]="product.image" />
+        </div>
+        <div class="product-details">
+          <div class="title">{{ product.title }}</div>
+          <div class="description">{{ product.description }}</div>
+          <div class="price">$ {{ product.price }}</div>
+          <div class="rating">
+            <div>
+              {{ product.rating.rate }}
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span id="rate-count">{{ product.rating.count }}</span>
+            </div>
+          </div>
+          <div class="add-to-cart-main">
+            <button>Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>
