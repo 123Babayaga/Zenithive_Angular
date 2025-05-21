@@ -1,0 +1,88 @@
+<div class="task-item-main" *ngFor="let task of filteredTasks">
+  <div class="status-priority">
+    <p
+      [ngClass]="{
+        high: task?.priority === 'High',
+        medium: task?.priority === 'Medium',
+        low: task?.priority === 'Low'
+      }"
+    >
+      {{ task?.priority }}
+    </p>
+    <span>&#183;</span>
+    <p>
+      {{ task?.status }}
+    </p>
+  </div>
+  <div class="task-detail">
+    <div class="task-title">{{ task?.title }}</div>
+    <div>
+      <div class="task-desc">
+        <span>&#183;</span>
+        <p>{{ task?.description }}</p>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          (change)="handleCheckToggle($event, task)"
+          [checked]="task.status == 'Completed'"
+        />
+        <label class="mark-as-complete-label">Mark as Completed</label>
+      </div>
+    </div>
+  </div>
+  <div class="assign-to">Assigned To: {{ task?.assignedTo }}</div>
+  <div class="task-btns">
+    <button class="update-btn" (click)="updateTask(task)">Update</button>
+    <button class="delete-btn" (click)="deleteTask(task)">Delete</button>
+  </div>
+</div>
+
+<div class="update-main" *ngIf="isUpdate">
+  <form>
+    <div class="task-title">
+      <label>Task Name : </label>
+      <input [value]="currentTask?.title" [(ngModel)]="title" name="title" />
+    </div>
+    <div class="task-desc">
+      <label>Description : </label>
+      <textarea
+        [value]="currentTask?.description"
+        [(ngModel)]="desc"
+        name="desc"
+      ></textarea>
+    </div>
+    <div class="task-status">
+      <label>Status : </label>
+      <input [value]="currentTask?.status" [(ngModel)]="status" name="status" />
+    </div>
+    <div class="task-priority">
+      <label>Priority : </label>
+      <input
+        [value]="currentTask?.priority"
+        [(ngModel)]="priority"
+        name="priority"
+      />
+    </div>
+    <div class="task-assignedTo">
+      <label>Assigned To : </label>
+      <input
+        [value]="currentTask?.assignedTo"
+        [(ngModel)]="assignTo"
+        name="assignName"
+      />
+    </div>
+    <div class="task-dueDate">
+      <label> Due Date : </label>
+      <input
+        [value]="currentTask?.dueDate"
+        [(ngModel)]="dueDate"
+        name="duedate"
+      />
+    </div>
+    <div class="update-btn-main">
+      <button class="updateBtn" (click)="updateSubmit()">Update</button>
+      <button class="cancelBtn" (click)="closeUpdate()">Cancel</button>
+    </div>
+  </form>
+</div>

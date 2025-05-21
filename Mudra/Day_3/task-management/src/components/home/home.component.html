@@ -1,0 +1,93 @@
+<div class="home-main-container">
+  <div class="inner-header">
+    <div class="add-task" (click)="addTask()">Add New Task</div>
+    <div class="filter-opt" (click)="filterClicked()">
+      <img
+        class="filter-icon"
+        src="../../assets/images/filter-icon.png"
+        alt="filter"
+      />
+      <div class="filter-text">Filter</div>
+    </div>
+  </div>
+  <div class="filter-popup" *ngIf="isFilterClicked">
+    <div class="side-bar-item-1" (click)="sortHighToLow()">
+      Priority: High to Low
+    </div>
+    <div class="side-bar-item-2" (click)="sortLowToHigh()">
+      Priority: Low to High
+    </div>
+  </div>
+  <div class="home-container">
+    <div class="side-bar">
+      <div
+        class="side-bar-item"
+        (click)="showAll()"
+        [ngClass]="{ active: isShowAll }"
+      >
+        Show All
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showCompleted()"
+        [ngClass]="{ active: isShowCompleted }"
+      >
+        Completed
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showInProgress()"
+        [ngClass]="{ active: isShowInProgress }"
+      >
+        In Progress
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showPending()"
+        [ngClass]="{ active: isShowPending }"
+      >
+        Pending
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="task-container">
+        <div>
+          <app-task-item></app-task-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="update-main" *ngIf="isAddtask">
+  <form>
+    <div class="task-title">
+      <label>Task Name : </label>
+      <input [(ngModel)]="title" name="title" />
+    </div>
+    <div class="task-desc">
+      <label>Description : </label>
+      <textarea [(ngModel)]="desc" name="desc"></textarea>
+    </div>
+    <div class="task-status">
+      <label>Status : </label>
+      <input [(ngModel)]="status" name="status" />
+    </div>
+    <div class="task-priority">
+      <label>Priority : </label>
+      <input [(ngModel)]="priority" name="priority" />
+    </div>
+    <div class="task-assignedTo">
+      <label>Assigned To : </label>
+      <input [(ngModel)]="assignTo" name="assignName" />
+    </div>
+    <div class="task-dueDate">
+      <label> Due Date : </label>
+      <input [(ngModel)]="dueDate" name="duedate" />
+    </div>
+    <div class="update-btn-main">
+      <button class="updateBtn" (click)="addSubmit()">Add</button>
+      <button class="cancelBtn" (click)="closeAdd()">Cancel</button>
+    </div>
+  </form>
+</div>

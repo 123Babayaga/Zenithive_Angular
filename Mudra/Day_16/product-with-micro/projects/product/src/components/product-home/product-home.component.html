@@ -1,0 +1,42 @@
+<div class="product-cards-main">
+  <ng-container *ngIf="products$ | async as products">
+    <ng-container *ngIf="products.length > 0; else noProducts">
+      <!-- <cdk-virtual-scroll-viewport itemSize="20" class="viewport"> -->
+      <div *ngFor="let product of products">
+        <div class="product-card-main">
+          <div class="image-div">
+            <img
+              [src]="product.image"
+              loading="lazy"
+              alt="Product Image"
+              class="product-img"
+            />
+          </div>
+          <div class="product-title">{{ product.title }}</div>
+          <div class="product-desc">{{ product.description }}</div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div class="product-price">$ {{ product.price }}</div>
+            <div
+              class="product-view-link"
+              [routerLink]="['/product_details', product.id]"
+            >
+              View Product Details
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div *cdkVirtualFor="let item of items">{{ item }}</div> -->
+      <!-- </cdk-virtual-scroll-viewport> -->
+    </ng-container>
+  </ng-container>
+
+  <ng-template #noProducts>
+    <p>No Products match your filter..</p>
+  </ng-template>
+</div>

@@ -1,0 +1,12 @@
+<ng-content></ng-content>
+<div class="timer-main">
+  <div class="couter">
+    {{ counter }}
+  </div>
+  <div class="time-out" *ngIf="isCounterComplete"></div>
+</div>
+
+<button (click)="stopTimer()" class="stop-btn">Stop Timer</button>
+<button (click)="startTimer()" *ngIf="isStopped" class="start-btn">
+  Start Timer
+</button>
