@@ -1,0 +1,125 @@
+.product-details-main {
+  padding: 100px 0 50px 0;
+  background-color: antiquewhite;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-detail-inner {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+}
+
+.back-arrow {
+  width: 80%;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 auto;
+  cursor: pointer;
+
+  span {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+}
+
+.category {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.product-img {
+  height: 350px;
+  width: 300px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 10px;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin: 10px;
+    color: rgb(79, 79, 79);
+    // width: 60%;
+    text-align: justify;
+  }
+
+  .price {
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+    margin: 10px;
+  }
+
+  .rating {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px;
+    div span {
+      color: rgb(255, 225, 0);
+      font-size: 2rem;
+    }
+
+    #rate-count {
+      font-size: 1rem;
+      color: black;
+      margin: 0 0 0 10px;
+    }
+  }
+
+  .add-to-cart-main {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin: 0 20px 0 0;
+      padding: 8px 32px;
+      background-color: rgb(150, 85, 0);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}
+
+.loader-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10% 0;
+}
+
+.loader {
+  width: 35px;
+  aspect-ratio: 1;
+  --_g: no-repeat radial-gradient(farthest-side, #579ce0 94%, #579ce000);
+  background: var(--_g) 0 0, var(--_g) 100% 0, var(--_g) 100% 100%,
+    var(--_g) 0 100%;
+  background-size: 40% 40%;
+  animation: l38 0.8s infinite;
+}
+@keyframes l38 {
+  100% {
+    background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+  }
+}

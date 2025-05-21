@@ -1,0 +1,24 @@
+<div class="card-main" [ngStyle]="customStyle">
+  <div
+    class="header-image"
+    [ngClass]="image == '' ? 'no-image' : 'image'"
+    *ngIf="isImage"
+    [ngStyle]="
+      image !== ''
+        ? {
+            'background-image': 'url(' + image + ')',
+            'background-size': 'cover'
+          }
+        : {}
+    "
+  ></div>
+  <div class="card-content-main">
+    <div class="card-title">
+      <ng-content select="[card-title]"></ng-content>
+    </div>
+    <div class="card-content">
+      <ng-content select="[card-content]"></ng-content>
+    </div>
+  </div>
+  <div class="footer"><ng-content select="[card-footer]"></ng-content></div>
+</div>

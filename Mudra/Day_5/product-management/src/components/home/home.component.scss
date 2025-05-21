@@ -1,0 +1,38 @@
+.product-cards-main {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+}
+
+.loader-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 10% 0;
+}
+
+.loader {
+  width: 35px;
+  aspect-ratio: 1;
+  --_g: no-repeat radial-gradient(farthest-side, #579ce0 94%, #579ce000);
+  background: var(--_g) 0 0, var(--_g) 100% 0, var(--_g) 100% 100%,
+    var(--_g) 0 100%;
+  background-size: 40% 40%;
+  animation: l38 0.8s infinite;
+}
+@keyframes l38 {
+  100% {
+    background-position: 100% 0, 100% 100%, 0 100%, 0 0;
+  }
+}
+
+.viewport {
+  height: 600px; /* or any height */
+  width: 100%;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
+  display: flex !important;
+}
