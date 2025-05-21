@@ -1,0 +1,29 @@
+<div class="loader-main" *ngIf="loading$ | async; else productList">
+  <div class="loader"></div>
+</div>
+
+<ng-template #productList>
+  <div *ngIf="error$ | async; else products">
+    Sorry.. Something went wrong.. {{ error$ }}
+  </div>
+
+  <ng-template #products>
+    <div class="product-cards-main">
+      <ng-container *ngIf="products$ | async as products">
+        <ng-container *ngIf="products.length > 0; else noProducts">
+          <!-- <cdk-virtual-scroll-viewport itemSize="20" class="viewport"> -->
+          <app-product-cards
+            *ngFor="let product of products"
+            [product]="product"
+          ></app-product-cards>
+          <!-- <div *cdkVirtualFor="let item of items">{{ item }}</div> -->
+          <!-- </cdk-virtual-scroll-viewport> -->
+        </ng-container>
+      </ng-container>
+
+      <ng-template #noProducts>
+        <p>No Products match your filter..</p>
+      </ng-template>
+    </div>
+  </ng-template>
+</ng-template>

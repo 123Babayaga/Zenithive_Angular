@@ -1,0 +1,85 @@
+<lib-button
+  [btnType]="'primary'"
+  [buttonClass]="'my-btn'"
+  (clicked)="submitClicked()"
+  >Submit</lib-button
+>
+<lib-button [btnType]="'secondary'" (clicked)="submitClicked()"
+  >Submit</lib-button
+>
+<lib-button [btnType]="'success'" (clicked)="submitClicked()"
+  >Submit</lib-button
+>
+<lib-button [btnType]="'danger'" (clicked)="submitClicked()">Submit</lib-button>
+<lib-button [btnType]="'warning'" (clicked)="submitClicked()"
+  >Submit</lib-button
+>
+<lib-button [btnType]="'info'" (clicked)="submitClicked()">Submit</lib-button>
+<lib-button [btnType]="'dark'" (clicked)="submitClicked()">Submit</lib-button>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <lib-input
+    controlName="name"
+    [formGroup]="loginForm"
+    label="name"
+    placeholder="Enter Your Name"
+    type="text"
+    [errorMessages]="{
+      required: 'Name is required',
+      maxlength: 'Maximum 50 characters are allowed',
+      minlength: 'Minimum 3 characters required'
+    }"
+  ></lib-input>
+
+  <lib-input
+    controlName="email"
+    [formGroup]="loginForm"
+    label="Email"
+    placeholder="Enter your email"
+    type="email"
+    [errorMessages]="{
+      required: 'Email is required',
+      email: 'Please enter a valid email'
+    }"
+  ></lib-input>
+
+  <lib-input
+    controlName="password"
+    [formGroup]="loginForm"
+    label="Password"
+    placeholder="Enter your password"
+    type="password"
+    [errorMessages]="{
+      required: 'Password is required',
+      minlength: 'Minimum 6 characters required'
+    }"
+  ></lib-input>
+
+  <!-- <button [disabled]="loginForm.invalid">Login</button> -->
+  <lib-button
+    [btnType]="'success'"
+    [type]="'submit'"
+    (clicked)="submitClicked()"
+    >Submit</lib-button
+  >
+</form>
+
+<div class="card-container">
+  <ng-container *ngFor="let i of numbers">
+    <lib-cards [isImage]="true" [image]="img">
+      <div card-title>Helloo..</div>
+      <div card-content>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam eligendi
+        beatae maiores cupiditate vitae cum optio non nemo libero consectetur
+        dolor harum fugiat facere mollitia ab officia, veritatis ea laudantium.
+      </div>
+      <lib-button
+        [btnType]="'secondary'"
+        (clicked)="submitClicked()"
+        card-footer
+        >Submit</lib-button
+      >
+    </lib-cards>
+  </ng-container>
+</div>
+<router-outlet />

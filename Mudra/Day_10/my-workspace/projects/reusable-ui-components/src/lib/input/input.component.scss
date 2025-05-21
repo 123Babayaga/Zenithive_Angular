@@ -1,0 +1,21 @@
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.invalid-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
