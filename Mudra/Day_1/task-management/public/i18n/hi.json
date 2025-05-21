@@ -1,0 +1,18 @@
+{
+  "Filter": "छानना",
+  "Priority: High to Low": "प्राथमिकता: उच्च से निम्न",
+  "Priority: Low to High": "प्राथमिकता: निम्न से उच्च",
+  "Show All": "सभी दिखाएँ",
+  "Completed": "पूर्ण",
+  "In Progress": "प्रगति पर",
+  "Pending": "लंबित",
+  "Task Name": "कार्य का नाम",
+  "Description": "विवरण",
+  "Status": "स्थिति",
+  "Priority": "प्राथमिकता",
+  "Assigned To": "सौंपा गया व्यक्ति",
+  "Due Date": "नियत तिथि",
+  "Update": "अपडेट करें",
+  "Cancel": "रद्द करें",
+  "Delete": "हटाएं"
+}

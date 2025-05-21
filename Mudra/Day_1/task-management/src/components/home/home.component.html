@@ -1,0 +1,153 @@
+<div class="home-main-container">
+  <div class="inner-header">
+    <div>
+      <button (click)="translateLang('en')">English</button>
+      <button (click)="translateLang('hi')">Hindi</button>
+      <button (click)="translateLang('ar')">Arabic</button>
+    </div>
+    <div
+      class="filter-opt"
+      role="button"
+      tabindex="0"
+      (click)="filterClicked()"
+      (keydown)="handleKeyDownFilter($event)"
+    >
+      <img
+        class="filter-icon"
+        src="../../assets/images/filter-icon.png"
+        alt="filter"
+      />
+      <div class="filter-text">
+        {{ "Filter" | translate }}
+      </div>
+    </div>
+  </div>
+  <div class="filter-popup" *ngIf="isFilterClicked">
+    <div
+      class="side-bar-item-1"
+      (click)="sortHighToLow()"
+      (keydown)="handleKeyDownhtl($event)"
+      role="button"
+      tabindex="0"
+    >
+      {{ "Priority: High to Low" | translate }}
+    </div>
+    <div
+      class="side-bar-item-2"
+      (click)="sortLowToHigh()"
+      (keydown)="handleKeyDownlth($event)"
+      role="button"
+      tabindex="0"
+    >
+      {{ "Priority: Low to High" | translate }}
+    </div>
+  </div>
+  <div class="home-container">
+    <div class="side-bar">
+      <div
+        class="side-bar-item"
+        (click)="showAll()"
+        (keydown)="handleKeyDown($event, 'all')"
+        [ngClass]="{ active: isShowAll }"
+        role="button"
+        tabindex="0"
+      >
+        {{ "Show All" | translate }}
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showCompleted()"
+        (keydown)="handleKeyDown($event, 'complete')"
+        [ngClass]="{ active: isShowCompleted }"
+        role="button"
+        tabindex="0"
+      >
+        {{ "Completed" | translate }}
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showInProgress()"
+        (keydown)="handleKeyDown($event, 'progress')"
+        [ngClass]="{ active: isShowInProgress }"
+        role="button"
+        tabindex="0"
+      >
+        {{ "In Progress" | translate }}
+      </div>
+      <div
+        class="side-bar-item"
+        (click)="showPending()"
+        (keydown)="handleKeyDown($event, 'pending')"
+        [ngClass]="{ active: isShowPending }"
+        role="button"
+        tabindex="0"
+      >
+        {{ "Pending" | translate }}
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="task-container">
+        <div *ngFor="let task of filteredTasks">
+          <app-task-item
+            [task]="task"
+            (taskUpdated)="updateTask(task)"
+            (taskDeleted)="deleteTask(task)"
+          ></app-task-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="update-main" *ngIf="isUpdate">
+  <form>
+    <div class="task-title">
+      <label>{{ "Task Name" | translate }} : </label>
+      <input [value]="currentTask?.title" [(ngModel)]="title" name="title" />
+    </div>
+    <div class="task-desc">
+      <label>{{ "Description" | translate }} : </label>
+      <textarea
+        [value]="currentTask?.description"
+        [(ngModel)]="desc"
+        name="desc"
+      ></textarea>
+    </div>
+    <div class="task-status">
+      <label>{{ "Status" | translate }} : </label>
+      <input [value]="currentTask?.status" [(ngModel)]="status" name="status" />
+    </div>
+    <div class="task-priority">
+      <label>{{ "Priority" | translate }} : </label>
+      <input
+        [value]="currentTask?.priority"
+        [(ngModel)]="priority"
+        name="priority"
+      />
+    </div>
+    <div class="task-assignedTo">
+      <label>{{ "Assigned To" | translate }} : </label>
+      <input
+        [value]="currentTask?.assignedTo"
+        [(ngModel)]="assignTo"
+        name="assignName"
+      />
+    </div>
+    <div class="task-dueDate">
+      <label> {{ "Due Date" | translate }} : </label>
+      <input
+        [value]="currentTask?.dueDate"
+        [(ngModel)]="dueDate"
+        name="duedate"
+      />
+    </div>
+    <div class="update-btn-main">
+      <button class="updateBtn" (click)="updateSubmit()">
+        {{ "Update" | translate }}
+      </button>
+      <button class="cancelBtn" (click)="closeUpdate()">
+        {{ "Cancel" | translate }}
+      </button>
+    </div>
+  </form>
+</div>

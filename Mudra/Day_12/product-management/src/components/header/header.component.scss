@@ -1,0 +1,76 @@
+.header-main {
+  display: flex;
+  top: 0;
+  justify-content: flex-end;
+  padding: 20px 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 3px 3px 30px gray;
+}
+
+.filter {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 100px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filter-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.filter-main {
+  position: absolute;
+  top: 90%;
+  right: 5%;
+  background-color: white;
+  // padding: 15px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 30px gray;
+}
+
+.filter-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.filter-item {
+  border-bottom: 1px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+  min-width: 200px;
+  text-align: center;
+}
+
+.clear-filter {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  color: darkgray;
+  padding: 10px 20px 10px 20px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgba(229, 229, 229, 0.89);
+}
+
+.close {
+  position: absolute;
+  right: 7%;
+  border: 1px solid black;
+  border-radius: 50%;
+  top: 40%;
+  padding: 0 3px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
